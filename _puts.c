@@ -6,7 +6,7 @@
  * Return: 1 on success
  */
 
-int _putchar(char c)
+int _putchar(int c)
 {
 	static int i;
 	static char buffer[BUFFER_SIZE];
@@ -19,4 +19,19 @@ int _putchar(char c)
 		i = 0;
 	}
 	return (1);
+}
+
+/**
+ * _puts - prints string
+ * @str: printed string
+ * Return: void
+ */
+
+int _puts(char *str)
+{
+	char *p = str;
+
+	while (*str)
+		_putchar(*str++);
+	return (str - p);
 }
