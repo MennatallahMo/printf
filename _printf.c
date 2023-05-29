@@ -1,46 +1,32 @@
 #include "main.h"
+
 /**
- * _printf - produces output according to a format
- * @format: a character string
- * @...:  a variable number of arguments
- * Return: the number of characters printed
+ * _printf - print what user want
+ * @format: the format string
+ * Return: no of printed bytes
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
 	int count = 0;
+	va_list args;
+	char *ptr;
 
 	va_start(args, format);
-
-	while (*format != '\0')
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (ptr = (char *)format; *ptr; ptr++)
 	{
-		if (*format == '%')
+		if (*ptr != '%')
 		{
-			if (*++format == 'c')
-			{
-				_putchar(va_arg(args, int));
-			} else if (*format == 's')
-			{
-				char *str = va_arg(args, char *);
-
-				while (*str != '\0')
-				{
-					_putchar(*str);
-					str++;
-				}
-			} else if (*format == '%')
-			{
-				_putchar('%');
-			} else
-			{
-			/* do nothing */
-			}
-		} else
-		{
-			_putchar(*format);
+			count += _putchar(*ptr);
+			continue;
 		}
-		format++;
+		ptr++;
+		count += get_print_function(ptr, args);
 	}
+	_putchar(BUFFER_FLUSH);
 	va_end(args);
 	return (count);
 }
