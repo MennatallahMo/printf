@@ -1,5 +1,6 @@
 #include "main.h"
-
+#include <limits.h>
+#include <stdio.h>
 /**
  * _printf - print what user want
  * @format: the format string
