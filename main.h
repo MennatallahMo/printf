@@ -39,3 +39,5 @@ int get_print_function(char *s, va_list args);
 /* printf.c */
 
 int _printf(const char *format, ...);
+
+#endif

@@ -1,26 +1,42 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_H
+#define _PRINTF_H
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
+#include <stdlib.h>
 
-/*main.c file*/
+#define BUFFER_SIZE 1024
+#define BUFFER_FLUSH -1
 
-void print_hello_world();
-void print_length(int, int);
-void print_negative(int);
-void print_unsigned(unsigned int);
-void print_unsigned_octal(unsigned int);
-void print_unsigned_hexadecimal(unsigned int);
-void print_character(char);
-void print_string(char *);
-void print_address(void *);
-void print_percent(void);
-void print_len(int);
-void print_unknown(void);
 
-/* printf.c tasks 0,1 */
+#define NULL_STRING "(null)"
+
+/* _puts.c */
+
+int _putchar(int c);
+int _puts(char *str);
+
+/**
+ * struct specifier - Structure token
+ * @specifier: token to be formated
+ * @f: Function
+ */
+typedef struct specifier
+{
+	char *specifier;
+	int (*f)(va_list);
+} specifier_t;
+
+
+/* printf functions */
+
+int print_char(va_list args);
+int print_string(va_list args);
+int print_percent(va_list args);
+int get_print_function(char *s, va_list args);
+
+/* printf.c */
 
 int _printf(const char *format, ...);
-
 #endif
