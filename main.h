@@ -34,6 +34,7 @@ typedef struct specifier
 int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
+int print_int(va_list args);
 int get_print_function(char *s, va_list args);
 
 /* printf.c */

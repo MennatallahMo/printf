@@ -39,3 +39,14 @@ int print_percent(va_list args)
 	(void)args;
 	return (_putchar('%'));
 }
+
+/**
+ * print_int - integer is printed
+ * @args: argument pointer
+ * Return: no of printed characters
+ */
+int print_int(va_list args)
+{
+	int l = (int)va_arg(args, int);
+	return (l);
+}
