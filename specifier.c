@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _specifier - finds the format function
- * @s: the format string
- * Return: no of bytes to be printed
+ * get_specifier - handes the format function
+ * @s: string
+ * Return: printed bytes
  */
 
 int (*get_specifier(char *s))(va_list ap, params_t *params)
@@ -16,7 +16,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 	};
 	int n = 0;
 
-	while (specifier[n].specifier)
+	while (specifiers[n].specifier)
 	{
 		if (*s == specifiers[n].specifier[0])
 		{
