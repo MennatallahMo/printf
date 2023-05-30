@@ -16,6 +16,11 @@ int (*check_specifier(char *s))(va_list args)
 		{"d", print_int},
 		{"r", print_reverse},
 		{"R", print_rot13},
+		{"b", print_binary},
+		{"o", print_octal},
+		{"u", print_unsigned},
+		{"x", print_hex},
+		{"X", print_Hex},
 		{NULL, NULL}
 	};
 	int n = 0;

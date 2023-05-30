@@ -9,6 +9,8 @@
 #define BUFFER_SIZE 1024
 #define BUFFER_FLUSH -1
 
+#define CONVERT_LOWERCASE    1
+#define CONVERT_UNSIGNED     2
 
 #define NULL_STRING "(null)"
 
@@ -40,6 +42,16 @@ int convert(long int num, int base);
 int _strlen(char *s);
 int print_reverse(va_list args);
 int print_rot13(va_list args);
+int print_unsigned(va_list args);
+int print_number(char *str);
+
+/*convert numbers */
+
+int print_binary(va_list args);
+int print_Hex(va_list args);
+int print_binary(va_list args);
+int print_octal(va_list args);
+int print_hex(va_list args);
 
 /* printf.c */
 
