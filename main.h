@@ -38,6 +38,8 @@ int print_int(va_list args);
 int get_print_function(char *s, va_list args);
 int convert(long int num, int base);
 int _strlen(char *s);
+int print_reverse(va_list args);
+int print_rot13(va_list args);
 
 /* printf.c */
 
