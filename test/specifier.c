@@ -12,6 +12,8 @@ int (*check_specifier(char *s))(va_list args)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
+		{"i", print_int},
+		{"d", print_int},
 		{NULL, NULL}
 	};
 	int n = 0;
