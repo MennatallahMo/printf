@@ -84,5 +84,5 @@ int print_int(va_list args)
 
 	int l = (int)va_arg(args, int);
 
-	return (print_number(convert(1, 10)));
+	return (print_number(convert(l, 10)));
 }
