@@ -36,21 +36,10 @@ int print_string(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
 int get_print_function(char *s, va_list args);
-char *convert(long int num, int base);
+int convert(long int num, int base);
 int _strlen(char *s);
-int _isdigit(int c);
-int print_number(char *str);
-int print_number_right_shift(char *str);
-int print_number_left_shift(char *str);
-
-/* printf numbers .c */
-char *convert(long int num, int base);
-
-/* specifiers .c */
-
-
-
-
+int print_reverse(va_list args);
+int print_rot13(va_list args);
 
 /* printf.c */
 

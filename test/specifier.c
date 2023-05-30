@@ -14,6 +14,8 @@ int (*check_specifier(char *s))(va_list args)
 		{"%", print_percent},
 		{"i", print_int},
 		{"d", print_int},
+		{"r", print_reverse},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 	int n = 0;

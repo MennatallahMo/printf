@@ -40,28 +40,30 @@ int print_percent(va_list args)
 	return (_putchar('%'));
 }
 
+
 /**
  * convert - converter function
- * @num: number
- * @base: a base
- * Return: a string
+ * @num: a number
+ * @base: the base
  */
-char *convert(long int num, int base)
+int convert(long int num, int base)
 {
 	static char *array;
 	static char buffer[50];
 	char sign = 0;
 	char *p;
 	unsigned long n = num;
+	unsigned int sum = 0;
 
 	if (num < 0)
 	{
 		n = -num;
 		sign = '-';
 	}
-	array = "0123456789";
+
+	array = "0123456789abcdef";
 	p = &buffer[49];
-	p = '\0';
+	*p = '\0';
 
 	do {
 		*--p = array[n % base];
@@ -70,7 +72,8 @@ char *convert(long int num, int base)
 
 	if (sign)
 		*--p = sign;
-	return (p);
+	sum += _puts(p);
+	return (sum);
 }
 
 /**
@@ -80,9 +83,9 @@ char *convert(long int num, int base)
  */
 int print_int(va_list args)
 {
-	long l;
+	long int l;
 
-	int l = (int)va_arg(args, int);
+	l = (int)va_arg(args, int);
 
-	return (print_number(convert(l, 10)));
+	return (convert(l, 10));
 }

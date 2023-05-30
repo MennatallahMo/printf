@@ -44,7 +44,7 @@ int print_rot13(va_list args)
 	int i = 0, j = 0;
 	int sum = 0;
 	char arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
-	char *a = va_arg(args, *char);
+	char *a = va_arg(args, char *);
 
 	while (a[i])
 	{
