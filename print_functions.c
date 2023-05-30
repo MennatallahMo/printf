@@ -21,9 +21,8 @@ int print_string(va_list args)
 	char *str = va_arg(args, char *);
 	unsigned int count = 0;
 
-	switch ((int)(!str))
-		case 1:
-			str = NULL_STRING;
+	if (!str)
+		str = NULL_STRING;
 
 	count += _puts(str);
 	return (count);
