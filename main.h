@@ -36,7 +36,7 @@ int print_string(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
 int get_print_function(char *s, va_list args);
-char *convert(long int num, int base);
+int convert(long int num, int base);
 int _strlen(char *s);
 
 /* printf.c */
